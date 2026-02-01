@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: ghcr.io/presenton/presenton:latest
+    container_name: presenton_demo
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      CAN_CHANGE_KEYS: "false"
+      LLM: "custom"
+      CUSTOM_LLM_URL: ${OPENAI_BASE_URL}
+      CUSTOM_LLM_API_KEY: ${OPENAI_API_KEY}
+      CUSTOM_MODEL: ${OPENAI_MODEL}
+      IMAGE_PROVIDER: "pixabay"
+      PIXABAY_API_KEY: ${PIXABAY_API_KEY}
+    volumes:
+      - presenton_data:/app_data
+
+volumes:
+  presenton_data:
