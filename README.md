@@ -105,7 +105,7 @@ For example, you can change the image on the slide to another one
 
 > Note that even though the option provided is `AI Generate`, it doesn't seem to ask the OpenRouter model to generate new images. Instead, it seems that it just sources other images from Pixabay based on the `Image Description` you entered. Another alternative is to upload your own image from your local computer.
 
-Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with LibreOffice Impress (Microsoft PowerPoint free alternative), or upload to Google Slides for online editing, sharing etc.
+Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with [LibreOffice Impress](https://www.libreoffice.org/discover/impress/) (Microsoft PowerPoint free alternative), or upload to Google Slides for online editing, sharing etc.
 
 Note that the created / generated slides are stored locally in your Docker *storage*. And you can go back to the slides from the `Dashboard`.
 
