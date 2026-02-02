@@ -69,19 +69,18 @@ Before getting into the deployment, here I will show you a demo session of slide
 The prompt I am going to use for the slides generation is:
 
 ```
-生動完整地詮釋基督教福音的真正意義
+A vivid introduction to Python programming to primary school students.
 ```
+![](imgs/screen-20260202200315.png)
 
-![](imgs/screen-20260201173727.png)
-
-Notice that I have chosen 5 slides in Traditional Chinese.
+Notice that I have chosen 5 slides in English.
 
 
 Even though I can supply additional **Supporting Documents**, I will just skip the option.
 
 The first thing it does is to generate the slide outline, which you can double check (***as you should be***) and edit whenever necessary.
 
-![](imgs/screen-20260201174246.png)
+![](imgs/screen-20260202201126.png)
 
 Next, you will need to choose a template for the slides (as of current version, there are not many templates to choose from 😔)
 
@@ -91,9 +90,9 @@ I will choose the first in-built one
 
 After a while, all the 5 slides are generated from the outline.
 
-![](imgs/screen-20260201175225.png)
+![](imgs/screen-20260202201433.png)
 
-![](imgs/screen-20260201192741.png)
+![](imgs/screen-20260202201523.png)
 
 >Notice the `Speaker notes` (you click ![](imgs/screen-20260202090640.png) on the right-top of the slide for them)
 
@@ -101,7 +100,7 @@ Presenton also provides some basic editing features for you to modify the genera
 
 For example, you can change the image on the slide to another one
 
-![](imgs/screen-20260201180349.png)
+![](imgs/screen-20260202201645.png)
 
 > Note that even though the option provided is `AI Generate`, it doesn't seem to ask the OpenRouter model to generate new images. Instead, it seems that it just sources other images from Pixabay based on the `Image Description` you entered. Another alternative is to upload your own image from your local computer.
 
@@ -109,7 +108,7 @@ Of course, you can export the slides in `PPTX` (PowerPoint) format, which you ca
 
 Note that the created / generated slides are stored locally in your Docker *storage*. And you can go back to the slides from the `Dashboard`.
 
-![](imgs/screen-20260201175734.png)
+![](imgs/screen-20260202202036.png)
 
 
 How much did it cost me to generate these 5 slides? Basically, close to nothing.
