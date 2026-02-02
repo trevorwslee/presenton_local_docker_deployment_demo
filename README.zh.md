@@ -103,11 +103,11 @@ Presenton 還提供一些基本的編輯功能，供您修改生成的幻燈片�
 
 ![](imgs/screen-20260201180349.png)
 
-> 請注意，儘管提供的選項是`AI Generate`，但它似乎並不要求 OpenRouter 模型生成新圖像。相反，它似乎只是根據您輸入的`Image Description`從 Pixabay 獲取其他圖像。另一種選擇是從您的本地電腦上傳您自己的圖像。
+> 請注意，儘管提供的選項是`AI Generate`，但它似乎並不要求 OpenRouter 模型生成新圖像。相反，它似乎只是根據您輸入的`Image Description`從 Pixabay 獲取其他圖像。另一種選擇是從您的本地電腦上傳 (`Upload`) 您自己的圖像。
 
-當然，您可以將幻燈片導出為`PPTX`（PowerPoint）格式，您可以使用 LibreOffice Impress（Microsoft PowerPoint 免費替代方案）在本地進一步編輯，或上傳到 Google Slides 進行線上編輯、分享等。
+當然，您可以將幻燈片導 (`Export`) 出為`PPTX`（PowerPoint）格式，您可以使用 LibreOffice Impress（Microsoft PowerPoint 免費替代方案）在本地進一步編輯，或上傳到 Google Slides 進行線上編輯、分享等。
 
-請注意，創建/生成的幻燈片存儲在您的 Docker *storage* 中。您可以從 Dashboard 返回幻燈片。
+請注意，創建/生成的幻燈片存儲在您的 Docker *storage* 中。您可以從 `Dashboard` 返回幻燈片。
 
 ![](imgs/screen-20260201175734.png)
 
@@ -127,7 +127,7 @@ Presenton 還提供一些基本的編輯功能，供您修改生成的幻燈片�
 
 1) 創建一個資料夾，例如 `local_presenton`
 
-2) 在資料夾中，您需要一個 Docker 配置檔案 -- 一個 `docker-compose.yml` 檔案 -- 您可以參考本 GitHub 倉庫中提供的 [`docker-compose.yml`](/local_presenton/docker-compose.yml)
+2) 在資料夾中，您需要一個 Docker 配置檔案 -- 一個 `docker-compose.yml` 檔案 -- 您可以參考本 GitHub 倉庫中提供的 [`docker-compose.yml`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/docker-compose.yml)
     ```
     ...
         container_name: presenton_demo
@@ -145,7 +145,7 @@ Presenton 還提供一些基本的編輯功能，供您修改生成的幻燈片�
       presenton_data:
     ```
 
-3) 您還需要在同一資料夾中創建一個 `.env` 檔案，告訴 Docker 您的機密資訊，如您的 OpenRouter 和 Pixabay API 金鑰 (API keys)。您可以參考本 GitHub 倉庫中提供的範例 [`.env.example`](/local_presenton/.env.example)
+3) 您還需要在同一資料夾中創建一個 `.env` 檔案，告訴 Docker 您的機密資訊，如您的 OpenRouter 和 Pixabay API 金鑰 (API keys)。您可以參考本 GitHub 倉庫中提供的範例 [`.env.example`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/.env.example)
     ```
     OPENAI_API_KEY="....."
     OPENAI_BASE_URL="https://openrouter.ai/api/v1"
@@ -195,7 +195,7 @@ docker-compose up -d
 
 # Enjoy!
 
-希望這個小示範能幫助您。 Have fun!
+希望這個小示範能幫到您。 Have fun!
 
 
 > Peace be with you!

@@ -107,7 +107,7 @@ For example, you can change the image on the slide to another one
 
 Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with LibreOffice Impress (Microsoft PowerPoint free alternative), or upload to Google Slides for online editing, sharing etc.
 
-Note that the created / generated slides are stored locally in your Docker *storage*. And you can go back to the slides from the Dashboard.
+Note that the created / generated slides are stored locally in your Docker *storage*. And you can go back to the slides from the `Dashboard`.
 
 ![](imgs/screen-20260201175734.png)
 
