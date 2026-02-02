@@ -126,7 +126,7 @@ As mentioned previously, Presenton can be deployed locally to your Docker Deskto
 
 1) Create a folder, say `local_presenton`
 
-2) In the folder, you will need a Docker configuration file -- a `docker-compose.yml` file -- you can refer to the [`docker-compose.yml`](/local_presenton/docker-compose.yml) provided in this GitHub repo
+2) In the folder, you will need a Docker configuration file -- a `docker-compose.yml` file -- you can refer to the [`docker-compose.yml`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/docker-compose.yml) provided in this GitHub repo
     ```
     ...
         container_name: presenton_demo
@@ -144,7 +144,7 @@ As mentioned previously, Presenton can be deployed locally to your Docker Deskto
       presenton_data:
     ```
 
-3) You will also need to create a `.env` file in the same folder to tell Docker your secrets, like your OpenRouter and Pixabay API keys. You can refer to the sample [`.env.example`](/local_presenton/.env.example) provided in this GitHub repo
+3) You will also need to create a `.env` file in the same folder to tell Docker your secrets, like your OpenRouter and Pixabay API keys. You can refer to the sample [`.env.example`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/.env.example) provided in this GitHub repo
     ```
     OPENAI_API_KEY="....."
     OPENAI_BASE_URL="https://openrouter.ai/api/v1"
