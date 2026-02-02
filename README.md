@@ -8,6 +8,7 @@ The demo is targeted to show audience:
 * Deployment of Presenton locally using Docker, specifically Docker Desktop.
 * Hooking up Presenton with [OpenRouter](https://openrouter.ai/) LLM gateway for using selected model on a pay-as-you-go basis.
 * Hooking up Presenton with [Pixabay API](https://pixabay.com/service/about/api/) for image [auto] sourcing.
+* Certainly, it is assumed that you have some technical background, and you have Docker Desktop installed on your local machine.
      
 
 # OpenRouter Account Setup
@@ -16,11 +17,11 @@ To setup an OpenRouter account, head to [OpenRouter.ai](https://openrouter.ai/)
 
 ![](imgs/screen-20260201090636.png)
 
-If not yet, sign up for an account on OpenRouter.ai. You can use your Google account for signing up.
+If not yet, sign up for an account. You can use your Google account for signing up.
 
 ![](imgs/screen-20260201090711.png)
 
-The first thing you may want to do is to check out their pricing / crediting system
+Then, the first thing you might want to do is to check out OpenRouter's pricing / crediting system
 * You pay for what you use with credits -- US$ -- you pre-purchased.
 * Different models have different crediting rates. The more powerful the model, the higher the rate.
   For example, as of 2026-02-01, `DeepSeek V3.2` will cost $0.25 per a million input tokens and $0.38 per a million output tokens.
@@ -29,13 +30,13 @@ The first thing you may want to do is to check out their pricing / crediting sys
 ![](imgs/screen-20260201090859.png)
 ![](imgs/screen-20260201090930.png)
 
-Since you will be using OpenRouter as the LLM gateway for Presenton, you need to get your API key from OpenRouter first. As will be shown later, you will need this key to deploy Presenton with Docker.  
+Since you will be using OpenRouter as the LLM service provider for Presenton, you need to get your API key from OpenRouter first. As will be shown later, you will need this key to deploy Presenton with Docker.  
 
 ![](imgs/screen-20260201092608.png)
 ![](imgs/screen-20260201092647.png)
 ![](imgs/screen-20260201092746.png)
 
-Copy the key somewhere safe for later use.
+Once created, you will be assigned an API key. *When the API key is used, OpenRouter will automatically match the API key with any restriction imposed on the use of that API key, like `Credit limit`.* Anyway, ***copy the key somewhere safe for later use.***
 
 ![](imgs/screen-20260201093021.png)
 
@@ -54,12 +55,12 @@ To find out the API key assigned to your account, go to their API documentation 
 ![](imgs/screen-20260201091255.png)
 ![](imgs/screen-20260201091454.png)
 
-Again, to setup Presenton with Docker, you will need this API key later.
+***To setup Presenton with Docker, you will need this API key later.***
 
 
 # Demo of Slides Generation with Presenton
 
-Before showing how Presenton can be deployed with Docker, here is a demo of a slide generation session. More importantly, the demo should give you a feel of how much you will pay for a simple slide presentation generation.
+Before getting into the deployment, here I will show you a demo session of slide generation first. Hopefully, the demo can give you a sense of what kind of result you can get; more importantly, a feel of how much you will pay the result you get.
 
 ![](imgs/screen-20260201173320.png)
 
@@ -80,9 +81,9 @@ The first thing it does is to generate the slide outline, which you can double c
 
 ![](imgs/screen-20260201174246.png)
 
-Next, you are offered to choose an template for the slides (as of current version, there are not many templates to choose from 😔)
+Next, you will need to choose a template for the slides (as of current version, there are not many templates to choose from 😔)
 
-I will chose the first in-built one
+I will choose the first in-built one
 
 ![](imgs/screen-20260201174801.png)
 
@@ -91,7 +92,8 @@ After a while, all the 5 slides are generated from the outline.
 ![](imgs/screen-20260201175225.png)
 
 ![](imgs/screen-20260201192741.png)
-* Notice the `speaker notes`
+
+>Notice the `Speaker notes` (you click ![](imgs/screen-20260202090640.png) on the right-top of the slide for them)
 
 Presenton also provides some basic editing features for you to modify the generated slides.
 
@@ -101,30 +103,65 @@ For example, you can change the image on the slide to another one
 
 > Note that even though the option provided is `AI Generate`, it doesn't seem to ask the OpenRouter model to generate a new image. Instead, it seems that it just sources other images from Pixabay based on the `Image Description` you entered.
 
-Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with LibreOffice Impress, or upload to Google Slides for online editing, sharing etc.
+Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with LibreOffice Impress (Microsoft PowerPoint free alternative), or upload to Google Slides for online editing, sharing etc.
 
 Note that the created / generated slides are stored locally in your Docker *storage*. And you can go back to the slides from the Dashboard.
 
 ![](imgs/screen-20260201175734.png)
 
 
-How much did it cost me to generate these 5 slides? Basically, close to nothing
-According to the records, the slide generation called `DeepSeek V3.2` 7 times
+How much did it cost me to generate these 5 slides? Basically, close to nothing.
+According to the OpenRouter usage records, the slide generation called `DeepSeek V3.2` 7 times
 
 ![](imgs/screen-20260201211513.png)
 
 
-And the two LLM calls costed me around 0.00445 USD in total
+And the 7 LLM calls costed me around 0.00445 USD in total
 
 
 # Local Deployment of Presenton with Docker
 
-As mentioned previously, Presenton can be deployed locally to your Docker Desktop installation. What you need to do are
-1) Create a folder, say `local_presenton`
-2) In the folder, you will need a Docker configuration file -- a `docker-compose.yml` file -- you can refer to the [`docker-compose.yml`](/local_presenton/docker-compose.yml) provided in this GitHub repo
-3) You will also need to create a `.env` file in the same folder to tell Docker your secrets, like your OpenRouter and Pixabay API keys. You can refer to the sample [`.env.example`](/local_presenton/.env.example) provided in this GitHub repo
+As mentioned previously, Presenton can be deployed locally to your Docker Desktop installation. What you need to do is
 
-Open a Command Prompt / PowerShell window, change directory to the `local_presenton` folder you created, and run the following command to start the Presenton Docker service locally
+1) Create a folder, say `local_presenton`
+
+2) In the folder, you will need a Docker configuration file -- a `docker-compose.yml` file -- you can refer to the [`docker-compose.yml`](/local_presenton/docker-compose.yml) provided in this GitHub repo
+    ```
+    ...
+        container_name: presenton_demo
+    ...
+          CUSTOM_LLM_URL: ${OPENAI_BASE_URL}
+          CUSTOM_LLM_API_KEY: ${OPENAI_API_KEY}
+          CUSTOM_MODEL: ${OPENAI_MODEL}
+          IMAGE_PROVIDER: "pixabay"
+          PIXABAY_API_KEY: ${PIXABAY_API_KEY}
+    ...
+    volumes:
+      presenton_data:
+    ```
+
+3) You will also need to create a `.env` file in the same folder to tell Docker your secrets, like your OpenRouter and Pixabay API keys. You can refer to the sample [`.env.example`](/local_presenton/.env.example) provided in this GitHub repo
+    ```
+    OPENAI_API_KEY="....."
+    OPENAI_BASE_URL="https://openrouter.ai/api/v1"
+    OPENAI_MODEL="deepseek/deepseek-v3.2"
+    PIXABAY_API_KEY="..."
+    ```   
+    You can change the model to use by changing `OPENAI_MODEL`. E.g. you can change to use `qwen3-30b-a3b-instruct-2507` like
+    ```
+    ...
+    OPENAI_MODEL="qwen/qwen3-30b-a3b-instruct-2507"
+    ...
+    ```
+    The list of models you can choose from, as well as their crediting rates, can be found at [OpenRouter Models](https://openrouter.ai/models)
+
+    E.g.
+
+    ![](imgs/screen-20260202092539.png)
+
+    > Notice that you can copy the model name by clicking ![](imgs/screen-20260202092804.png)
+
+Open a Command Prompt / PowerShell terminal, change directory to the `local_presenton` folder you created, and run the following command to start the Presenton Docker service locally
 
 ```
 docker-compose up -d
@@ -139,9 +176,10 @@ This will deploy Presenton locally as a Docker container
 * `local_presenton` -- the folder name -- is the name of your Docker container [group]
 * `presenton_demo` is the name of the Presenton Docker container
 
+Your Presenton data is stored in the Docker Desktop managed *volume* named `local_presenton_presenton_data`
+
 ![](imgs/screen-20260201185810.png)
 
-Your Presenton data is stored in the Docker Desktop managed *volume* named `local_presenton_presenton_data`
 
 
 To open your local Presenton deployment (a web app), in your browser, go to `http://localhost:8080`
