@@ -1,6 +1,6 @@
 # Presenton Local Docker Deployment Demo
 
-This GitHub repo is simply a demo of the LLM-powered presentation slides generation tool [Presenton](https://github.com/presenton/presenton) -- ***Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)***
+This simple demo is targeted to showcase the local deployment of the LLM-powered presentation slides generation tool [Presenton](https://github.com/presenton/presenton) -- ***Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)***
 
 > Presenton is an open-source application for generating presentations with AI — all running locally on your device. Stay in control of your data and privacy while using models like OpenAI and Gemini, or use your own hosted models through Ollama.
 

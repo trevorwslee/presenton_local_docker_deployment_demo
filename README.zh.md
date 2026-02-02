@@ -1,6 +1,6 @@
 # Presenton Local Docker Deployment Demo
 
-本 GitHub 倉庫是一個簡單的 LLM 驅動簡報幻燈片生成工具 [Presenton](https://github.com/presenton/presenton) 示範 -- ***開源 AI 簡報生成器和 API (Gamma, Beautiful AI, Decktopus 替代方案)***
+此簡單個示範旨在展示本地部署 LLM 驅動簡報幻燈片生成工具 [Presenton](https://github.com/presenton/presenton) -- ***開源 AI 簡報生成器和 API (Gamma, Beautiful AI, Decktopus 替代方案)***
 
 > Presenton 是一個開源應用程式，用於透過 AI 生成簡報 — 全部在您的裝置上本地運行。在使用 OpenAI 和 Gemini 等模型時保持對資料和隱私的控制，或透過 Ollama 使用您自己託管的模型。
 
