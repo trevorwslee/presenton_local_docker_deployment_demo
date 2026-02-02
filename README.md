@@ -5,10 +5,12 @@ This GitHub repo is simply a demo of the LLM-powered presentation slides generat
 > Presenton is an open-source application for generating presentations with AI — all running locally on your device. Stay in control of your data and privacy while using models like OpenAI and Gemini, or use your own hosted models through Ollama.
 
 The demo is targeted to show audience:
-* Deployment of Presenton locally using Docker, specifically Docker Desktop.
+* Deployment of Presenton locally using Docker, specifically [Docker Desktop](https://docs.docker.com/desktop/).
+  > If you have Docker Desktop installed on your computer, I guess you are as technical savvy as to follow the steps shown here.
 * Hooking up Presenton with [OpenRouter](https://openrouter.ai/) LLM gateway for using selected model on a pay-as-you-go basis.
+  > Yes, you will have to pay for the LLM service you use. However, it likely will not cost you much unless you are a very very heavy user.
 * Hooking up Presenton with [Pixabay API](https://pixabay.com/service/about/api/) for image [auto] sourcing.
-* Certainly, it is assumed that you have some technical background, and you have Docker Desktop installed on your local machine.
+  > It is a free service.
      
 
 # OpenRouter Account Setup
@@ -36,7 +38,7 @@ Since you will be using OpenRouter as the LLM service provider for Presenton, yo
 ![](imgs/screen-20260201092647.png)
 ![](imgs/screen-20260201092746.png)
 
-Once created, you will be assigned an API key. *When the API key is used, OpenRouter will automatically match the API key with any restriction imposed on the use of that API key, like `Credit limit`.* Anyway, ***copy the key somewhere safe for later use.***
+Once created, you will be assigned a new API key. *When the API key is used, OpenRouter will automatically match the API key with any restriction imposed on the use of that API key, like `Credit limit`.* Anyway, ***copy the key somewhere safe for later use.***
 
 ![](imgs/screen-20260201093021.png)
 
@@ -50,7 +52,7 @@ Again, you can use your Google account for signing up.
 ![](imgs/screen-20260201090424.png)
 ![](imgs/screen-20260201090504.png)
 
-To find out the API key assigned to your account, go to their API documentation page.
+To find out the API key assigned to your account, go to their [API documentation](https://pixabay.com/api/docs/) page.
 
 ![](imgs/screen-20260201091255.png)
 ![](imgs/screen-20260201091454.png)
@@ -101,7 +103,7 @@ For example, you can change the image on the slide to another one
 
 ![](imgs/screen-20260201180349.png)
 
-> Note that even though the option provided is `AI Generate`, it doesn't seem to ask the OpenRouter model to generate a new image. Instead, it seems that it just sources other images from Pixabay based on the `Image Description` you entered.
+> Note that even though the option provided is `AI Generate`, it doesn't seem to ask the OpenRouter model to generate new images. Instead, it seems that it just sources other images from Pixabay based on the `Image Description` you entered. Another alternative is to upload your own image from your local computer.
 
 Of course, you can export the slides in `PPTX` (PowerPoint) format, which you can further edit locally with LibreOffice Impress (Microsoft PowerPoint free alternative), or upload to Google Slides for online editing, sharing etc.
 
@@ -130,6 +132,9 @@ As mentioned previously, Presenton can be deployed locally to your Docker Deskto
     ...
         container_name: presenton_demo
     ...
+        ports:
+          - "8080:80"
+    ...  
           CUSTOM_LLM_URL: ${OPENAI_BASE_URL}
           CUSTOM_LLM_API_KEY: ${OPENAI_API_KEY}
           CUSTOM_MODEL: ${OPENAI_MODEL}
@@ -161,7 +166,7 @@ As mentioned previously, Presenton can be deployed locally to your Docker Deskto
 
     > Notice that you can copy the model name by clicking ![](imgs/screen-20260202092804.png)
 
-Open a Command Prompt / PowerShell terminal, change directory to the `local_presenton` folder you created, and run the following command to start the Presenton Docker service locally
+Open a Command Prompt / PowerShell Terminal, change directory to the `local_presenton` folder you created, and run the following command to start the Presenton Docker service locally
 
 ```
 docker-compose up -d
