@@ -8,8 +8,8 @@
 * 使用 Docker，特別是 [Docker Desktop](https://docs.docker.com/desktop/) 在本地部署 Presenton。
   > 如果您的電腦已安裝 Docker Desktop，我想您已具備足夠的技術能力來跟隨這裡顯示的步驟。
 * 將 Presenton 與 [OpenRouter](https://openrouter.ai/) LLM 閘道器連接，以按用量付費的方式使用選定的模型。
-  > 是的，您需要為使用的 LLM 服務付費。但是，除非您是非常重度的使用者，否則費用應該不會太高。
-* 將 Presenton 與 [Pixabay API](https://pixabay.com/service/about/api/) 連接以進行圖像[自動]來源獲取。
+  > 是的，您需要為使用的 LLM 服務付費。但是，除非您是非常重度的使用者，否則費用應該不會高。
+* 將 Presenton 與 [Pixabay API](https://pixabay.com/service/about/api/) 連接以進行圖像[自動]獲取。
   > 這是一項免費服務。
      
 
@@ -145,7 +145,7 @@ Presenton 還提供一些基本的編輯功能，供您修改生成的幻燈片�
       presenton_data:
     ```
 
-3) 您還需要在同一資料夾中創建一個 `.env` 檔案，告訴 Docker 您的機密資訊，如您的 OpenRouter 和 Pixabay API 金鑰 (API keys)。您可以參考本 GitHub 倉庫中提供的範例 [`.env.example`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/.env.example)
+3) 您還需要在同一資料夾中創建一個 `.env` 檔案，好讓 Docker 使用您的機密資訊，如您的 OpenRouter 和 Pixabay API 金鑰 (API keys)。您可以參考本 GitHub 倉庫中提供的範例 [`.env.example`](https://github.com/trevorwslee/presenton_local_docker_deployment_demo/blob/main/local_presenton/.env.example)
     ```
     OPENAI_API_KEY="....."
     OPENAI_BASE_URL="https://openrouter.ai/api/v1"
